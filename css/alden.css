@@ -1,0 +1,31 @@
+/* Alden: two choices fill most of the screen, in portrait and landscape. */
+:root { --ink: #1d3b2a; --line: #2f6f48; --sky-deep: #2f9e57; }
+.tap-body { background: linear-gradient(180deg, #f2fbf4 0%, #d8f1df 60%, #c3e8cd 100%); }
+body.toddler.playing { height: 100vh; height: 100dvh; overflow: hidden; }
+body.toddler .tap-stage { display: flex; flex-direction: column; height: calc(100dvh - 86px); max-width: none; padding: 0 2.5vw 1.5vh; }
+body.toddler .tap-ask { flex: 0 0 auto; margin: 0 0 1.5vh; }
+body.toddler .tap-ask p { font-size: clamp(28px, 4.2vmin, 48px); }
+body.toddler .tap-grid { flex: 1 1 auto; min-height: 0; display: grid; gap: 3vmin; grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+@media (orientation: landscape) {
+  body.toddler .tap-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+}
+body.toddler .tap-choice { min-height: 0; height: 100%; border-width: 8px !important; border-radius: 5vmin; font-size: 34vmin; }
+body.toddler .tap-choice .swatch { width: 34vmin; height: 34vmin; }
+body.toddler .tap-choice svg { width: 36vmin; height: 36vmin; }
+body.toddler .tap-choice .letter { font-size: 36vmin; }
+body.toddler .tap-choice .apples { font-size: 21vmin; max-width: 70vmin; line-height: 1.1; }
+@media (orientation: landscape) {
+  body.toddler .tap-choice { font-size: 30vmin; }
+  body.toddler .tap-choice .swatch, body.toddler .tap-choice svg { width: 34vmin; height: 34vmin; }
+  body.toddler .tap-choice .apples { font-size: 17vmin; max-width: 42vw; }
+}
+body.toddler .tap-word { flex: 0 0 auto; min-height: 0; margin: 1.2vh 0 0; font-size: clamp(24px, 3.4vmin, 38px); }
+body.toddler .tap-dots { flex: 0 0 auto; margin: 0.8vh 0 0; }
+/* Grown-ups corner: small, faint, bottom right. Opens on long-press or double-tap. */
+.grownups { position: fixed; right: 8px; bottom: 8px; z-index: 50; font-size: 13px; padding: 6px 10px; border-radius: 10px;
+  background: rgba(255,255,255,.55); color: #4b6b57; border: 1px solid rgba(47,111,72,.3) !important; opacity: .7; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+.grownups-panel { position: fixed; inset: 0; z-index: 60; background: rgba(20,40,28,.45); display: flex; align-items: center; justify-content: center; padding: 20px; }
+.grownups-panel[hidden] { display: none; }
+.grownups-card { background: #fff; color: #1d3b2a; max-width: 640px; border-radius: 20px; padding: 18px 22px; font-size: 18px; line-height: 1.45; border: 3px solid #2f6f48; }
+.grownups-card h2 { margin: 0 0 8px; font-size: 24px; }
+.grownups-card button { margin-top: 8px; font-size: 18px; padding: 8px 18px; border-radius: 999px; background: #d8f1df; border: 2px solid #2f6f48 !important; }

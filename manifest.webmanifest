@@ -1,0 +1,10 @@
+{
+  "name": "Alden's Web",
+  "short_name": "Alden's Web",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#d8f1df",
+  "theme_color": "#2f9e57",
+  "icons": [{ "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }]
+}

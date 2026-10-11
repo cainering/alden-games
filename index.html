@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Alden's Web">
+  <meta name="theme-color" content="#2f9e57">
+  <title>Alden's Web</title>
+  <link rel="icon" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/tap.css">
+  <link rel="stylesheet" href="css/alden.css">
+</head>
+<body class="tap-body home toddler">
+  <main id="tap-app"></main>
+  <button type="button" class="grownups" id="grownups" aria-label="Grown-ups: long-press or double-tap to open">grown-ups</button>
+  <div class="grownups-panel" id="grownups-panel" hidden role="dialog" aria-modal="true" aria-label="For parents">
+    <div class="grownups-card">
+      <h2>For parents</h2>
+      <p>Tap a game. A voice asks for a picture. Any tap is fine: the picture that was tapped is named slowly in English, then Hebrew and Thai (switch them with the buttons at the top). There are no timers, no scores, and no losing screens. Each round is three finds and ends with a cheer.</p>
+      <p>Hebrew and Thai are spoken only if this device has a Hebrew or Thai voice installed (iPad: Settings → Accessibility → Spoken Content → Voices). Please have the Thai words checked first; see thai-review.md.</p>
+      <button type="button" id="grownups-close">Close</button>
+    </div>
+  </div>
+  <script src="settings.js"></script>
+  <script src="games/words.js"></script>
+  <script src="games/tap.js"></script>
+  <script>
+    /* Grown-ups corner: a single tap does nothing. Long-press (0.8 s) or double-tap opens it. */
+    (function () {
+      var btn = document.getElementById("grownups"), panel = document.getElementById("grownups-panel");
+      var hold = 0, lastTap = 0;
+      function open() { panel.hidden = false; }
+      btn.addEventListener("pointerdown", function () { hold = setTimeout(open, 800); });
+      ["pointerup", "pointerleave", "pointercancel"].forEach(function (ev) { btn.addEventListener(ev, function () { clearTimeout(hold); }); });
+      btn.addEventListener("click", function () { var now = Date.now(); if (now - lastTap < 400) open(); lastTap = now; });
+      btn.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+      document.getElementById("grownups-close").addEventListener("click", function () { panel.hidden = true; });
+      /* Lock page scrolling while a game is on screen. */
+      function mark() { document.body.classList.toggle("playing", !!location.hash.replace("#", "")); }
+      window.addEventListener("hashchange", mark); mark();
+    })();
+  </script>
+</body>
+</html>
