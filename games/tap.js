@@ -147,6 +147,13 @@
     app.appendChild(topBar(false));
     app.appendChild(el("h1", "tap-title", CFG.title || "Tap and Listen"));
     var menu = el("div", "tap-menu");
+    (CFG.links || []).forEach(function (l) {   /* tiles that open their own page, e.g. Animal Sounds */
+      var a = el("a", "tap-tile tap-link");
+      a.href = l.href;
+      a.appendChild(el("span", "big", l.emoji));
+      a.appendChild(el("span", "", l.title));
+      menu.appendChild(a);
+    });
     GAMES.forEach(function (id) {
       var g = WORDS[id];
       var a = el("a", "tap-tile");

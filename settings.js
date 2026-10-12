@@ -16,6 +16,8 @@ window.TAP_CONFIG = {
   key: "alden-tap",
   title: "Alden's Web",
   /* Games on the home page, in order. */
+  /* Extra home tiles that open their own page (shown first). */
+  links: [{ href: "sounds/", emoji: "🐴", title: "Animal Sounds" }],
   games: ["animals", "colors", "shapes", "count", "shabbat", "alephbet"],
   roundSize: 3,      /* three finds, then a cheer */
   choices: 2,        /* two big pictures at a time */

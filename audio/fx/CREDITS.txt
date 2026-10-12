@@ -1,3 +1,27 @@
 horse-neigh.mp3: from "Wiehern.ogg" by Hü. on Wikimedia Commons
 (https://commons.wikimedia.org/wiki/File:Wiehern.ogg), released into the public domain.
 Trimmed to one neigh, faded in/out, high frequencies softened, kept quiet for a toddler.
+
+Animal Sounds page (sounds/). All trimmed to one short call, faded in and out,
+high frequencies rolled off, and normalized quiet (peaks about -12 to -16 dBFS).
+Dog, lion, elephant and rooster are softened more (lowpass 2.5-3 kHz, lower level).
+
+From BigSoundBank.com by Joseph Sardin, released under CC0 1.0 (https://bigsoundbank.com/droit.html).
+"Additional sounds: Joseph SARDIN - BigSoundBank.com"
+  dog-woof.mp3     #2955 "Barking dog #3"
+  cat-meow.mp3     #0494 "Little Meow of a Cat #1"
+  cow-moo.mp3      #2386 "Cow Moos #6"
+  sheep-baa.mp3    #2343 "Sheep #1"
+  duck-quack.mp3   #0276 "Ducks"
+  rooster.mp3      #0283 "Rooster Song"
+  chick-peep.mp3   #0672 "Chick that chirp"
+  goat-maa.mp3     #0279 "Bleating Goat #1"
+  frog-croak.mp3   #0819 "One frog"
+  owl-hoot.mp3     #3459 "Tawny Owl #3"
+  bird-tweet.mp3   #3503 "Common Blackbird #30"
+  bee-buzz.mp3     #1000 "Bumblebee #1"
+From Wikimedia Commons:
+  lion-roar.mp3    "Lion raring-sound1TamilNadu178.ogg" by Info-farmer (த*உழவன்), public domain
+                   https://commons.wikimedia.org/wiki/File:Lion_raring-sound1TamilNadu178.ogg
+  elephant.mp3     "Elephant voice - trumpeting.ogg" by Info-farmer (தகவலுழவன்), CC0
+                   https://commons.wikimedia.org/wiki/File:Elephant_voice_-_trumpeting.ogg

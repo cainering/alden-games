@@ -1,0 +1,15 @@
+/* Animal Sounds: one screen, no scrolling, big targets on iPad either way round. */
+html, body.sounds { margin: 0; height: 100%; overflow: hidden; overscroll-behavior: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+body.sounds { background: linear-gradient(180deg, #f1fbef 0%, #d8f1d4 100%); display: flex; flex-direction: column; font-family: system-ui, -apple-system, sans-serif; }
+.snd-top { flex: 0 0 auto; padding: 10px 14px 0; }
+.snd-home { display: inline-flex; align-items: center; justify-content: center; width: 76px; height: 76px; font-size: 40px; text-decoration: none; background: #fff; border: 4px solid #2f6b45; border-radius: 50%; }
+.snd-grid { flex: 1 1 auto; min-height: 0; display: grid; gap: 14px; padding: 12px 14px calc(14px + env(safe-area-inset-bottom));
+  grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(5, 1fr); }
+@media (orientation: landscape) { .snd-grid { grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(3, 1fr); } }
+.snd-animal { min-height: 0; display: flex; align-items: center; justify-content: center; background: #fff; border: 5px solid #2f6b45; border-radius: 32px; box-shadow: 0 6px 0 #2f6b45; padding: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.snd-animal span { font-size: min(13vh, 17vw); line-height: 1; pointer-events: none; display: block; }
+@media (orientation: landscape) { .snd-animal span { font-size: min(19vh, 12vw); } }
+.snd-animal.playing { background: #fff6d6; }
+.snd-animal.bounce span { animation: snd-bounce .6s ease-out; }
+@keyframes snd-bounce { 0% { transform: translateY(0) scale(1); } 35% { transform: translateY(-14%) scale(1.08); } 70% { transform: translateY(2%) scale(.98); } 100% { transform: translateY(0) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .snd-animal.bounce span { animation: none; } }
