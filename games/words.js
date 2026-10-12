@@ -3,8 +3,9 @@
    Every Thai word here is listed in thai-review.md for a native check. */
 window.TAP_WORDS = {
   animals: {
-    title: "Animals", emoji: "🐮", ask: "Where is the {en}?",
+    title: "Animals", emoji: "🐴", ask: "Where is the {en}?",
     items: [
+      { id: "horse", en: "horse", he: "סוּס", th: "ม้า", pic: "🐴", sound: "Neigh", fx: "fx/horse-neigh.mp3" },
       { id: "cow", en: "cow", he: "פָּרָה", th: "วัว", pic: "🐮", sound: "Moo" },
       { id: "dog", en: "dog", he: "כֶּלֶב", th: "หมา", pic: "🐶", sound: "Woof woof" },
       { id: "cat", en: "cat", he: "חָתוּל", th: "แมว", pic: "🐱", sound: "Meow" },

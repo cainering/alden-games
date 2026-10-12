@@ -57,7 +57,8 @@
     var parts = [{ text: item.en, lang: "en" }];
     if (langs.he && item.he) parts.push({ text: item.he, lang: "he" });
     if (langs.th && item.th) parts.push({ text: item.th, lang: "th" });
-    if (item.sound) parts.push({ text: item.sound, lang: "en" });
+    if (item.fx && window.KidsVoice) parts.push({ src: item.fx, text: item.sound, lang: "en" });   /* real recorded animal sound */
+    else if (item.sound) parts.push({ text: item.sound, lang: "en" });
     if (extra) parts = parts.concat(extra);
     say(parts);
   }
@@ -166,12 +167,16 @@
     var game = WORDS[id];
     var pool = itemsFor(id);
     var targets = shuffle(pool).slice(0, Math.min(ROUND, pool.length));
+    var fav = CFG.first && CFG.first[id];   /* e.g. { animals: "horse" }: Alden's favourite comes first */
+    var favItem = fav && pool.filter(function (it) { return it.id === fav; })[0];
+    if (favItem) targets = [favItem].concat(shuffle(pool.filter(function (it) { return it.id !== fav; }))).slice(0, Math.min(ROUND, pool.length));
     var step = 0;
 
     function showStep() {
       var target = targets[step];
       var others = shuffle(pool.filter(function (it) { return it.id !== target.id; })).slice(0, CHOICES - 1);
       var choices = shuffle([target].concat(others));
+      if (favItem) choices.sort(function (a, b) { return (b.id === fav) - (a.id === fav); });   /* favourite top-left */
       var busy = false;
       app.innerHTML = "";
       app.appendChild(topBar(true));

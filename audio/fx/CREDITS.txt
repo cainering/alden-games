@@ -1,0 +1,3 @@
+horse-neigh.mp3: from "Wiehern.ogg" by Hü. on Wikimedia Commons
+(https://commons.wikimedia.org/wiki/File:Wiehern.ogg), released into the public domain.
+Trimmed to one neigh, faded in/out, high frequencies softened, kept quiet for a toddler.

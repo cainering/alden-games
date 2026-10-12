@@ -20,6 +20,7 @@ window.TAP_CONFIG = {
   roundSize: 3,      /* three finds, then a cheer */
   choices: 2,        /* two big pictures at a time */
   countMax: 3,       /* count 1 to 3 */
+  first: { animals: "horse" },   /* Alden loves horses: the horse comes first, top-left, with a real gentle neigh */
   rate: 0.65,        /* slow speech */
   pause: 5200,       /* time to hear English, Hebrew, and Thai before moving on */
   he: true,          /* Hebrew on by default (toggle on screen) */
