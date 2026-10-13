@@ -28,3 +28,7 @@ window.TAP_CONFIG = {
   he: true,          /* Hebrew on by default (toggle on screen) */
   th: true           /* Thai on by default (toggle on screen). Mom: please check thai-review.md first. */
 };
+
+/* Kid switcher links (js/kid-switch.js), same as Aria's and Bodhi's sites. Remove a line to hide that kid. */
+window.KID_SWITCH_KIDS = [{"id": "aria", "name": "Aria", "face": "👧", "href": "https://aria.cainhq.com/", "host": "aria."}, {"id": "bodhi", "name": "Bodhi", "face": "🐯", "href": "https://bodhi.cainhq.com/", "host": "bodhi."}, {"id": "alden", "name": "Alden", "face": "🐣", "href": "https://alden.cainhq.com/", "host": "alden."}];
+window.KID_SWITCH_BIG = true;   /* bigger pill for little fingers */

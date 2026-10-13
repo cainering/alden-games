@@ -1,7 +1,8 @@
 /* Animal Sounds: one screen, no scrolling, big targets on iPad either way round. */
 html, body.sounds { margin: 0; height: 100%; overflow: hidden; overscroll-behavior: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
 body.sounds { background: linear-gradient(180deg, #f1fbef 0%, #d8f1d4 100%); display: flex; flex-direction: column; font-family: system-ui, -apple-system, sans-serif; }
-.snd-top { flex: 0 0 auto; padding: 10px 14px 0; }
+.snd-top { flex: 0 0 auto; padding: 10px 14px 0; display: flex; align-items: center; gap: 14px; position: relative; z-index: 5; }
+#kid-switch-slot #kid-switch { margin: 0; align-self: center; }
 .snd-home { display: inline-flex; align-items: center; justify-content: center; width: 76px; height: 76px; font-size: 40px; text-decoration: none; background: #fff; border: 4px solid #2f6b45; border-radius: 50%; }
 .snd-grid { flex: 1 1 auto; min-height: 0; display: grid; gap: 14px; padding: 12px 14px calc(14px + env(safe-area-inset-bottom));
   grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(5, 1fr); }
