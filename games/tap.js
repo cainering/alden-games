@@ -174,7 +174,7 @@
     var game = WORDS[id];
     var pool = itemsFor(id);
     var targets = shuffle(pool).slice(0, Math.min(ROUND, pool.length));
-    var fav = CFG.first && CFG.first[id];   /* e.g. { animals: "horse" }: Alden's favourite comes first */
+    var fav = CFG.first && CFG.first[id];   /* e.g. { animals: "horse" }: this one comes first */
     var favItem = fav && pool.filter(function (it) { return it.id === fav; })[0];
     if (favItem) targets = [favItem].concat(shuffle(pool.filter(function (it) { return it.id !== fav; }))).slice(0, Math.min(ROUND, pool.length));
     var step = 0;

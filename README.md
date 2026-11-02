@@ -1,6 +1,6 @@
 # Alden's Web
 
-A calm tap-and-listen site for Alden (a toddler). It reuses the look of the
+A calm tap-and-listen site for Alden. It reuses the look of the
 joyce-games sites (css/site.css) but replaces the quiz model with toddler games:
 
 * Animals, Colors, Shapes, Count 1-3, Shabbat (candles, challah, kiddush cup, Torah), Aleph-Bet.
